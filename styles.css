@@ -7,6 +7,9 @@
     --foreground-color: white;
     --shadow-color: #999999;
 
+    --main-color-hover: hsl(from var(--main-color) h s calc(l - 10));
+    --main-color-active: hsl(from var(--main-color) h s calc(l - 20));
+
     --small-profile-pic-size: 50px;
     --large-profile-pic-size: 100px;
 }
@@ -32,7 +35,7 @@ body {
     font-family: "Roboto", sans-serif;
 
     display: grid;
-    grid-template: max-content max-content / minmax(max-content, 30ch) 3fr;
+    grid-template: max-content 1fr / minmax(max-content, 30ch) 3fr;
     height: 100vh;
 }
 
@@ -143,11 +146,11 @@ img {
 }
 
 #interaction-buttons > button:hover {
-    background-color: hsl(from var(--main-color) h s calc(l - 10));
+    background-color: var(--main-color-hover);
 }
 
 #interaction-buttons > button:active {
-    background-color: hsl(from var(--main-color) h s calc(l - 20));
+    background-color: var(--main-color-active);
 }
 
 /* Sidebar */
@@ -180,7 +183,12 @@ img {
 .nav li {
     margin: 1rem 0;
     font-size: 20px;
+}
 
+.nav li:hover {
+    background-color: var(--main-color-hover);
+    outline: 0.5rem solid var(--main-color-hover);
+    border-radius: 0.5rem;
 }
 
 /* Content */
