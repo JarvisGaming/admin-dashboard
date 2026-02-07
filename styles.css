@@ -1,11 +1,12 @@
+/* General */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
-    --main-color: #00a8eb;
-    --accent-color: #EB4300;
+    --main-color: #841aad;
+    --accent-color: #bc68dd;
     --background-color: #E2E8F0;
     --foreground-color: white;
-    --shadow-color: #999999;
+    --shadow-color: #000000;
 
     --main-color-hover: hsl(from var(--main-color) h s calc(l - 10));
     --main-color-active: hsl(from var(--main-color) h s calc(l - 20));
@@ -14,12 +15,11 @@
     --large-profile-pic-size: 100px;
 }
 
-/* General */
 body {
     font-family: "Roboto", sans-serif;
 
     display: grid;
-    grid-template: max-content 1fr / minmax(max-content, 30ch) 3fr;
+    grid-template: max-content auto / max-content auto;
     height: 100vh;
 }
 
@@ -33,15 +33,12 @@ h3 {
 
 .icon {
     height: 100%;
+    width: auto;
 }
 
 .icon.white {
     /* Turn black SVG white */
     filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(141deg) brightness(103%) contrast(101%);
-}
-
-img {
-    display: inline;
 }
 
 .profile-pic {
@@ -65,6 +62,21 @@ img {
     border-radius: 1rem;
 }
 
+.hover-shadow:hover {
+    position: relative;
+    z-index: 1;
+    box-shadow: 0px 0px 10px 10px #BABABA;
+}
+
+.hover-shadow.down:hover {
+    box-shadow: 0px 10px 7px 0px #BABABA;
+}
+
+.hover-shadow.up:hover {
+    box-shadow: 0px -10px 7px 0px #BABABA;
+}
+
+
 /* Header */
 #header {
     grid-row: 1;
@@ -77,7 +89,6 @@ img {
     align-items: center;
 
     background-color: var(--foreground-color);
-    box-shadow: 0px 5px 5px 0px var(--shadow-color);
 }
 
 #search {
@@ -191,6 +202,12 @@ img {
     border-radius: 0.5rem;
 }
 
+.nav li:active {
+    background-color: var(--main-color-active);
+    outline: 0.5rem solid var(--main-color-active);
+    border-radius: 0.5rem;
+}
+
 /* Content */
 #content {
     grid-row: 2;
@@ -244,7 +261,7 @@ img {
 
 #announcements hr {
     margin: none;
-    border: 2px solid var(--background-color);
+    border: 2px solid var(--accent-color);
 }
 
 #announcements .title {
