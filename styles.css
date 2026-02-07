@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 :root {
     --main-color: rgb(0, 168, 235);
     --accent-color: rgb(241, 228, 36);
@@ -21,8 +23,10 @@ body > * > * > * > * {
 
 /* General */
 body {
+    font-family: "Roboto", sans-serif;
+
     display: grid;
-    grid-template: 1fr 5fr / 1fr 3fr;
+    grid-template: 1fr 5fr / minmax(250px, 1fr) 3fr;
     height: 100vh;
 }
 
